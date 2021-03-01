@@ -10,6 +10,7 @@
       background-color: gray;
       width: 100%;
       height: 100%;
+      color: gray;
     }
 
     #sectionContainer {
@@ -49,6 +50,34 @@
       padding: 10px;
     }
 
+    #titleBar h1 {
+      margin: 10px;
+      font-size: 100px;
+      color: black;
+    }
+
+    #titleBar img {
+      width: 60%;
+    }
+
+    #titleBar .row {
+      padding: 0px;
+    }
+
+    #titleBar .column {
+      padding: 0px;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .column {
+      flex: 75%;
+    }
+
     /*
     #bottomBar {
       width: 100%;
@@ -70,32 +99,45 @@
 <body>
   <!-- A Navigation Title Bar, use to flick between sections easily, stays at top of page -->
   <div id="titleBar">
-    <!-- box-shadow: 0px 0px 15px 15px gray;-->
-    <div>Title Bar</div>
+    <div class="row">
+      <div class="column" style="flex:150%">
+        <h1>Title Bar</h1>
+      </div>
+      <div class="column">
+        <div class="row">
+          <div class="column">
+            <img src="res/github.svg" alt="GitHub Icon and Link">
+          </div>
+          <div class="column">
+            <img src="res/github.svg" alt="GitHub Icon and Link">
+          </div>
+          <div class="column">
+            <img src="res/github.svg" alt="GitHub Icon and Link">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="sectionContainer">
     <div class="section" id="section1">
-      <!-- box-shadow: 0px 0px 15px 15px #FFCDB2;-->
       <h2>Section 1</h2>
     </div>
 
     <div class="section" id="section2">
-      <!-- box-shadow: 0px 0px 15px 15px #FFB4A2;-->
       <h2>Section 2</h2>
     </div>
 
     <div class="section" id="section3">
-      <!-- box-shadow: 0px 0px 15px 15px #E5989B;-->
       <h2>Section 3</h2>
     </div>
 
     <div class="section" id="section4">
-      <!-- box-shadow: 0px 0px 15px 15px #B5838D;-->
       <h2>Section 4</h2>
     </div>
 
   </div>
+
   <!--
   <div id="bottomBar" style="width: 100%; height: 5%; padding: 10px; bottom: 0px; position: fixed;">
     <div>Bottom Bar</div>
