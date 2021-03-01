@@ -13,13 +13,7 @@
       color: gray;
     }
 
-    #sectionContainer {
-      width: 100%;
-      padding: 0 20px;
-      box-sizing: border-box;
-      background-color: gray;
-    }
-
+    /* || Class Declaration Styles || */
     .section {
       width: 80%;
       margin-left: auto;
@@ -38,6 +32,26 @@
       margin: 0 10px;
     }
 
+    .row {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .column {
+      flex: 75%;
+    }
+
+    /* || Portfolio Section Styles || */
+
+    #sectionContainer {
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      background-color: gray;
+    }
+
+    /* || TitleBar Specific Styles || */
     #titleBar {
       width: 100%;
       height: 150px;
@@ -70,15 +84,7 @@
       padding: 0px;
     }
 
-    .row {
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
-
-    .column {
-      flex: 75%;
-    }
+    /* || BottomBar Specific Styles || */
 
     /*
     #bottomBar {
@@ -106,6 +112,7 @@
         <h1>A Mediocre Portfolio</h1>
       </div>
       <div class="column">
+        <!-- Title Bar Image Links, for social media etc -->
         <div class="row">
           <div class="column">
             <a href="https://github.com/CyradisNyx" title="GitHub Page">
@@ -118,7 +125,7 @@
             </a>
           </div>
           <div class="column">
-            <a href="" title="If I Had Twitter, It Would Go Here">
+            <a href="" title="If I Had A Twitter, It Would Go Here">
               <img src="res/twitter.svg" alt="Twitter Icon and Link">
             </a>
           </div>
@@ -127,6 +134,7 @@
     </div>
   </div>
 
+  <!-- Portfolio Content Sections -->
   <div id="sectionContainer">
     <div class="section" id="section1">
       <h2>Marshmallow Game</h2>
@@ -167,6 +175,7 @@
 
   </div>
 
+  <!-- Defunct BottomBar, for copyright etc? -->
   <!--
   <div id="bottomBar" style="width: 100%; height: 5%; padding: 10px; bottom: 0px; position: fixed;">
     <div>Bottom Bar</div>
