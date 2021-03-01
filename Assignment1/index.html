@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: gray;
+      width: 100%;
+      height: 100%;
+    }
+
+    #sectionContainer {
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      background-color: gray;
+    }
+
+    .section {
+      width: 100%;
+      height: 400px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: gray 2px solid;
+      border-radius: 20px;
+      box-sizing: border-box;
+      background-color: white;
+    }
+
+    .section h2 {
+      font-size: 50px;
+      margin: 0 10px;
+    }
+
+    #titleBar {
+      width: 100%;
+      height: 150px;
+      left: 0px;
+      top: 0px;
+      position: sticky;
+      border-bottom: gray 20px solid;
+      background-color: white;
+    }
+
+    #titleBar div {
+      padding: 10px;
+    }
+
+    /*
+    #bottomBar {
+      width: 100%;
+      height: 5%;
+      padding: 10px;
+      bottom: 0px;
+      position: fixed;
+      border-top: gray 2px solid;
+      background-color: white;
+    }
+
+    #bottomBar div {
+      padding: 10px;
+    }
+    */
+  </style>
+</head>
+
+<body>
+  <!-- A Navigation Title Bar, use to flick between sections easily, stays at top of page -->
+  <div id="titleBar">
+    <!-- box-shadow: 0px 0px 15px 15px gray;-->
+    <div>Title Bar</div>
+  </div>
+
+  <div id="sectionContainer">
+    <div class="section" id="section1">
+      <!-- box-shadow: 0px 0px 15px 15px #FFCDB2;-->
+      <h2>Section 1</h2>
+    </div>
+
+    <div class="section" id="section2">
+      <!-- box-shadow: 0px 0px 15px 15px #FFB4A2;-->
+      <h2>Section 2</h2>
+    </div>
+
+    <div class="section" id="section3">
+      <!-- box-shadow: 0px 0px 15px 15px #E5989B;-->
+      <h2>Section 3</h2>
+    </div>
+
+    <div class="section" id="section4">
+      <!-- box-shadow: 0px 0px 15px 15px #B5838D;-->
+      <h2>Section 4</h2>
+    </div>
+
+  </div>
+  <!--
+  <div id="bottomBar" style="width: 100%; height: 5%; padding: 10px; bottom: 0px; position: fixed;">
+    <div>Bottom Bar</div>
+  </div>
+  -->
+
+</body>
+
+</html>
