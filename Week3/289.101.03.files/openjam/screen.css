@@ -2,17 +2,18 @@
 
 /*
 Wildcard selector for outlining all elements
-*/
 * { outline: red 1px solid;}
+*/
 
 body {
-  background-color: #82DD85;
+  background-color: #FFFFFF;
   background-image: url('img/illustration.gif'), url('img/texture.jpg');
   background-position: center 280px, left top;
-  background-repeat: no-repeat, repeat-x;
+  background-repeat: no-repeat, repeat;
   background-size: 800px, auto;
   font-family: 'Quicksand', sans-serif;
   margin: 0;
+  width: auto;
 }
 
 #nav {
@@ -38,6 +39,18 @@ body {
   max-width: 220px;
 }
 
+h1, h2, h3 {
+  text-align: center;
+  color: rgb(50, 120, 120);
+  margin-top: 0px;
+}
+
+p {
+  padding: 0 250px;
+  color: rgb(50, 120, 120);
+  font-size: 14px;
+}
+
 .register_btn {
   background-color: #E43;
   border: 2px dashed #A43;
@@ -48,4 +61,99 @@ body {
   font-weight: bold;
   margin-top: 25px;
   padding: 15px 30px;
+}
+
+#what {
+  background-color: rgba(200, 255, 230, 0.8);
+  margin-top: 360px;
+  padding-top: 30px;
+}
+
+#what p:nth-of-type(1) {
+  font-size: 18px;
+  line-height: 200%
+}
+
+#sponsor_logos {
+  text-align: center;
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  padding: 0px;
+  width: 100%;
+}
+
+#sponsor_logos img {
+  display: inline;
+  margin: 0 5px;
+  width: 200px;
+}
+
+#why {
+  background-color: #92f0cf;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#where {
+  background-image: url('img/map.gif');
+  background-position: center;
+  height: 450px;
+  padding-top: 50px;
+}
+
+#where * {
+  color: #a34373;
+  font-weight: bold;
+}
+
+#where p {
+  text-align: right;
+}
+
+#when {
+  background-color: #34b3ac;
+  background-image: url('img/wires.png');
+  background-position: bottom;
+  background-size: 700px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#when * {
+  color: #FFFFFF;
+}
+
+#when h3 {
+  border-top: 2px dashed #FFFFFF;
+  padding-top: 10px;
+}
+
+#when ul {
+  padding: 0 250px;
+  padding-bottom: 10px;
+}
+
+#who {
+  background-color: #FFFFFF;
+  padding: 30px 0;
+}
+
+#who p:nth-of-type(1) {
+  font-size: 18px;
+  line-height: 200%
+}
+
+#footer {
+  text-align: center;
+  display: inline-block;
+  margin: 30px 0;
+  padding: 0px;
+  width: 100%;
+}
+
+#footer img {
+  display: inline;
+  margin: 0 5px;
+  width: 60px;
 }
