@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Layout 7</title>
+    <style>
+      div {
+        outline: 1px solid black;
+      }
+
+      #container {
+        margin: auto;
+        max-width: 800px;
+      }
+
+      #element_1 {
+        background-color: blue;
+        grid-template-columns: 1fr 2fr;
+        height: 50px;
+      }
+
+      #element_2 {
+        background-color: lime;
+        height: 600px;
+      }
+
+      #element_3 {
+        background-color: red;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      #element_3 .yellow {
+        height: 200px;
+      }
+
+      #element_3 .yellow:first-child {
+        height: 100px;
+        grid-column: 1/-1;
+      }
+
+      #element_4 {
+        background-color: blue;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      #element_4 .yellow {
+        height: 150px;
+      }
+
+      #element_4 .yellow:first-child {
+        height: 75px;
+        grid-column: 1/-1;
+      }
+
+      #element_5 {
+        background-color: lime;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      #element_5 .yellow {
+        height: 400px;
+      }
+
+      #element_5 .yellow:first-child {
+        height: 100px;
+        grid-column: 1/-1;
+      }
+
+      #element_6 {
+        background-color: red;
+        grid-template-columns: 2fr 1fr;
+      }
+
+      #element_6 .yellow {
+        height: 400px;
+      }
+
+      #element_6 .yellow:first-child {
+        height: 70px;
+        grid-column: 1/-1;
+      }
+
+      #element_6 .yellow:last-child {
+        height: 300px;
+      }
+
+      .inner_container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 20px;
+      }
+
+      .yellow {
+        background-color: yellow;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="element_1" class="inner_container">
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+      </div>
+      <div id="element_2"></div>
+      <div id="element_3" class="inner_container">
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+      </div>
+      <div id="element_4" class="inner_container">
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+      </div>
+      <div id="element_5" class="inner_container">
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+      </div>
+      <div id="element_6" class="inner_container">
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+      </div>
+      <div id="element_1" class="inner_container"></div>
+    </div>
+  </body>
+</html>
