@@ -10,6 +10,12 @@ h1 {
     margin: 10px 0px;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 a {
     text-decoration: none;
     color: gray;
@@ -53,10 +59,10 @@ a:hover img {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-#link_bar * {
+#link_bar img {
     text-align: center;
-    width: 75%;
-    height: 75%;
+    width: 35%;
+    height: 35%;
 }
 
 #content_grid {
@@ -65,8 +71,43 @@ a:hover img {
     padding-bottom: 0px;
 }
 
+
 #content_grid > a {
     padding: 10px;
     width: 325px;
     height: 325px;
+}
+
+#about_grid {
+    grid-template-columns: 1.5fr 2fr;
+    align-items: start;
+}
+
+#about_grid > div {
+    padding: 20px;
+}
+
+#about_grid h2 {
+    margin-top: 0px;
+}
+
+#blog_entry {
+    margin: 20px 60px;
+    padding: 0px;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    border-bottom: 4px solid #BBBBBB;
+}
+
+#blog_entry > * {
+    padding: 20px;
+}
+
+#blog_entry img {
+    height: auto;
+}
+
+#blog_entry h2 {
+    margin-top: 0px;
+    text-align: center;
 }
