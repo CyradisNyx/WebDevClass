@@ -6,9 +6,29 @@
 
 body {
   background-color: #F2F2F2;
+  color: #767e9e;
   margin: 0;
   font-family: 'Lato', sans-serif;
+  font-size: 18px;
   line-height: 30px;
+}
+
+h1 {
+    font-size: 30px;
+    color: #666d89;
+}
+
+button {
+  display: inline;
+  font-size: 12px;
+  background-color: transparent;
+  border: 1px solid #767e9e;
+  color: #767e9e;
+  border-radius: 5px;
+}
+
+button:focus {
+  color: white;
 }
 
 .grid {
@@ -22,6 +42,10 @@ body {
 
 .quarters {
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.long {
+  grid-column: 1/-1;
 }
 
 /** HEADER STYLING **/
@@ -91,15 +115,8 @@ body {
 .services {
   max-width: 950px;
   margin: 0 auto;
-  color: #767e9e;
-  font-size: 18px;
   line-height: 20px;
   font-weight: 300;
-}
-
-.services h1 {
-  color: #666d89;
-  font-size: 30px;
 }
 
 .services > .grid {
@@ -119,7 +136,16 @@ body {
 
 /** PORTFOLIO STYLING **/
 .portfolio {
+  background-color: #2d303a;
+}
 
+.portfolio > .grid {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.portfolio img {
+  padding: 10px;
 }
 
 /** ABOUT STYLING **/
