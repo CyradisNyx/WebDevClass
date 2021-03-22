@@ -137,6 +137,7 @@ button:focus {
 /** PORTFOLIO STYLING **/
 .portfolio {
   background-color: #2d303a;
+  padding-bottom: 50px;
 }
 
 .portfolio > .grid {
@@ -150,7 +151,16 @@ button:focus {
 
 /** ABOUT STYLING **/
 .about {
+  max-width: 950px;
+  margin: 0 auto;
+}
 
+.about .long {
+  margin:35px 0px;
+}
+
+.linkbar img {
+  display: inline;
 }
 
 /** QUOTE STYLING **/
