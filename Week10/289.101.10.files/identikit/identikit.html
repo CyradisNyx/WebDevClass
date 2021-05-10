@@ -71,14 +71,6 @@
     </div>
 
     <script>
-        // coordinate variables
-        var eye_left_x = 100;
-        var eye_left_y = 100;
-        var eye_right_x = 250;
-        var eye_right_y = 100;
-        var mouth_x = 100;
-        var mouth_y = 250;
-
         // Get Element References
         var eye_left = document.getElementById('eye_left');
         var eye_right = document.getElementById('eye_right');
@@ -141,12 +133,12 @@
         });
 
         function resetFace() {
-          eye_left.style.left = eye_left_x + 'px';
-          eye_left.style.top = eye_left_y + 'px';
-          eye_right.style.left = eye_right_x + 'px';
-          eye_right.style.top = eye_right_y + 'px';
-          mouth.style.left = mouth_x + 'px';
-          mouth.style.top = mouth_y + 'px';
+          eye_left.style.left = '100px';
+          eye_left.style.top = '100px';
+          eye_right.style.left = '250px';
+          eye_right.style.top = '100px';
+          mouth.style.left = '100px';
+          mouth.style.top = '250px';
 
           swapElement([eye_left, eye_right], "eye_solid");
           swapElement([mouth], "mouth_happy");
