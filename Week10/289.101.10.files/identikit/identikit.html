@@ -50,18 +50,18 @@
 <body>
 
     <div id="controls">
-        <button id="eyes_up_btn">move eyes up</button>
-        <button>move eyes down</button>
-        <button>move eyes closer together</button>
-        <button>move eyes further apart</button>
-        <button>hollow eyes</button>
-        <button>solid eyes</button>
-        <button>no right eye</button>
-        <button>move mouth up</button>
-        <button>move mouth down</button>
-        <button>happy mouth</button>
-        <button>sad mouth</button>
-        <button>reset face</button>
+        <button id="move-eyes-up">move eyes up</button>
+        <button id="move-eyes-down">move eyes down</button>
+        <button id="move-eyes-together">move eyes closer together</button>
+        <button id="move-eyes-apart">move eyes further apart</button>
+        <button id="swap-eyes-hollow">hollow eyes</button>
+        <button id="swap-eyes-solid">solid eyes</button>
+        <button id="remove-eyes-right">no right eye</button>
+        <button id="move-mouth-up">move mouth up</button>
+        <button id="move-mouth-down">move mouth down</button>
+        <button id="swap-mouth-happy">happy mouth</button>
+        <button id="swap-mouth-sad">sad mouth</button>
+        <button id="reset-all">reset face</button>
     </div>
 
     <div id="face">
@@ -76,20 +76,119 @@
         var eye_left_y = 100;
         var eye_right_x = 250;
         var eye_right_y = 100;
+        var mouth_x = 100;
+        var mouth_y = 250;
+
+        // Get Element References
+        var eye_left = document.getElementById('eye_left');
+        var eye_right = document.getElementById('eye_right');
+        var mouth = document.getElementById('mouth');
 
         // set initial positions
-        document.getElementById('eye_left').style.left = eye_left_x + 'px';
-        document.getElementById('eye_left').style.top = eye_left_y + 'px';
-        document.getElementById('eye_right').style.left = eye_right_x + 'px';
-        document.getElementById('eye_right').style.top = eye_right_y + 'px';
+        resetFace();
 
-        // move eyes up event listener
-        document.getElementById('eyes_up_btn').addEventListener('click', () => {
-            eye_left_y -= 10;
-            document.getElementById('eye_left').style.top = eye_left_y + 'px';
-            eye_right_y -= 10;
-            document.getElementById('eye_right').style.top = eye_right_y + 'px';
+        // Eye Listeners
+        document.getElementById("move-eyes-up").addEventListener('click', () => {
+          moveElement([eye_left, eye_right], [0, -10]);
         });
+
+        document.getElementById("move-eyes-down").addEventListener('click', () => {
+          moveElement([eye_left, eye_right], [0, 10]);
+        });
+
+        document.getElementById("move-eyes-together").addEventListener('click', () => {
+          moveElement([eye_left], [10, 0]);
+          moveElement([eye_right], [-10, 0]);
+        });
+
+        document.getElementById("move-eyes-apart").addEventListener('click', () => {
+          moveElement([eye_left], [-10, 0]);
+          moveElement([eye_right], [10, 0]);
+        });
+
+        document.getElementById("swap-eyes-hollow").addEventListener('click', () => {
+          swapElement([eye_left, eye_right], "eye_hollow");
+        });
+
+        document.getElementById("swap-eyes-solid").addEventListener('click', () => {
+          swapElement([eye_left, eye_right], "eye_solid");
+        });
+
+        document.getElementById("remove-eyes-right").addEventListener('click', () => {
+          hideElement([eye_right]);
+        });
+
+        // Mouth Listeners
+        document.getElementById("move-mouth-up").addEventListener('click', () => {
+          moveElement([mouth], [0, -10]);
+        });
+
+        document.getElementById("move-mouth-down").addEventListener('click', () => {
+          moveElement([mouth], [0, 10]);
+        });
+
+        document.getElementById("swap-mouth-happy").addEventListener('click', () => {
+          swapElement([mouth], "mouth_happy");
+        });
+
+        document.getElementById("swap-mouth-sad").addEventListener('click', () => {
+          swapElement([mouth], "mouth_sad");
+        });
+
+        // Misc Listeners
+        document.getElementById("reset-all").addEventListener('click', () => {
+          resetFace();
+        });
+
+        function resetFace() {
+          eye_left.style.left = eye_left_x + 'px';
+          eye_left.style.top = eye_left_y + 'px';
+          eye_right.style.left = eye_right_x + 'px';
+          eye_right.style.top = eye_right_y + 'px';
+          mouth.style.left = mouth_x + 'px';
+          mouth.style.top = mouth_y + 'px';
+
+          swapElement([eye_left, eye_right], "eye_solid");
+          swapElement([mouth], "mouth_happy");
+
+          showElement([eye_left, eye_right, mouth]);
+        }
+
+        // Takes an Array of elements (eyes, mouth, etc) and moves each element by the appropriate (x, y) moveBy
+        function moveElement(elementArray, moveBy) {
+          elementArray.forEach((item, i) => {
+            item.style.left = (parseInt(item.style.left.slice(0, -2)) + moveBy[0]) + 'px';
+            item.style.top = (parseInt(item.style.top.slice(0, -2)) + moveBy[1]) + 'px';
+          });
+        }
+
+        function swapElement(elementArray, newSrc){
+          elementArray.forEach((item, i) => {
+            item.src = newSrc + '.svg';
+          });
+        }
+
+        function hideElement(elementArray){
+          elementArray.forEach((item, i) => {
+            item.style.display = "none";
+          });
+        }
+
+        function showElement(elementArray){
+          elementArray.forEach((item, i) => {
+            item.style.display = "block";
+          });
+        }
+
+        function toggleElement(elementArray){
+          elementArray.forEach((item, i) => {
+            if (item.style.display == "block") {
+              item.style.display = "none";
+            } else {
+              item.style.display = "block";
+            }
+          });
+        }
     </script>
 
 </body>

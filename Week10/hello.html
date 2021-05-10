@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS Hello World</title>
+    <style media="screen">
+      #red {background-color: red;}
+      #blue {background-color: blue;}
+    </style>
+  </head>
+  <body>
+    <h1>JS 101</h1>
+
+    <div id="red">
+      red div here
+    </div>
+
+    <div id="blue">
+      blue div here
+    </div>
+
+    <div id="hello-btn">
+      say hello
+    </div>
+
+    <script>
+      // alert('Hello World!');
+      console.log('Hello World!');
+      document.write('Hello World!');
+
+      var x = 1;
+      console.log(x*2);
+
+      var surname = "Smith";
+      var firstname = "John";
+      console.log(firstname+' '+surname);
+
+      var reddiv = document.getElementById('red');
+      reddiv.style.backgroundColor = 'green';
+
+      var hello = document.getElementById('hello-btn');
+      hello.addEventListener('click', () => {
+        if (hello.style.backgroundColor != 'orange') {
+          hello.style.backgroundColor = 'orange';
+        } else {
+          hello.style.backgroundColor = 'red';
+        }
+      });
+    </script>
+  </body>
+</html>
