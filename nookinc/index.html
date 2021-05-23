@@ -11,10 +11,11 @@
     <title>Nook Inc.</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="nookinc.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./css/nookinc.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/services.css">
 
+    <!-- GFonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 
@@ -24,6 +25,7 @@
 
     <!-- JQuery/Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="./js/includes.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
@@ -38,67 +40,65 @@
 
 <body>
     <!--Header Bar-->
-    <div class="container">
-        <div id="header" class="row nintendo-font">
-            <div id="logo" class="col-12 col-md-3 justify-content-center justify-content-md-start vertical-center">
-                <img src='./assets/NookLogo.png' alt="NookInc Logo">
-                NOOK INC
-            </div>
-            <div id="navbar" class="col vertical-center justify-content-center justify-content-md-end">
-                <button onclick="location.href='index.html'" class="current">HOME</button>
-                <button onclick="location.href='explore.html'">EXPLORE</button>
-                <button onclick="location.href='services.html'">SERVICES</button>
-                <button onclick="location.href='shop.html'">SHOP</button>
-                <button onclick="location.href='about.html'">ABOUT</button>
-            </div>
-        </div>
-    </div>
+    <div include="./includes/header.html"></div>
 
-    <!-- Video THings -->
-    <div class="container position-relative mb-5 mb-lg-3">
-        <div id="header-extend" class="row d-none d-lg-flex"></div>
-        <div id="header-extend" class="row d-flex d-lg-none" style="height: 100%;"></div>
-        <div id="video-player" class="col col-md-10 d-flex">
-            <video controls>
-                <source src="assets/promo_video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <img id="tom-nook" src="assets/tom_nook.png" alt="A capitalist raccoon" class="d-none d-lg-flex">
-    </div>
-    <div class="container px-3">
-        <div class="row p-2 textbox">
-            <img src="assets/tom_nook.png" alt="" class="col-4 d-lg-none">
-            <div class="col-8 col-lg-12">
-                <h1>Paradise Awaits!</h1>
-                <p>
-                    Nook Inc. confidently recommends a trip to a remote deserted island. And that’s not just because
-                    it’s the only company that offers this type of package! On the island, life is as peaceful and
-                    relaxing as it gets. Since the island is deserted, you can create your new life from the very
-                    beginning – just like a pioneer!
-                </p>
-            </div>
-        </div>
-    </div>
-
+    <!-- Page Content -->
+    <div id="page-content" include="./includes/home.html"></div>
 
     <!-- Footer Bar -->
-    <div class="container fixed-bottom">
-        <div id="footer" class="row nintendo-font">
-            <div id="logo" class="col vertical-center">
-                <i class="fa fa-copyright" aria-hidden="true"></i>
-                NINTENDO
-            </div>
-            <div id="navbar" class="col vertical-center justify-content-end">
-                <button onclick="location.href='https://www.instagram.com/nintendo/'"><i
-                        class="fab fa-instagram"></i></button>
-                <button onclick="location.href='https://twitter.com/NintendoAmerica'"><i
-                        class="fab fa-twitter"></i></button>
-                <button onclick="location.href='https://www.facebook.com/NintendoAUNZ/'"><i
-                        class="fab fa-facebook-f"></i></button>
-            </div>
-        </div>
-    </div>
+    <div include="./includes/footer.html"></div>
+
+    <script>
+        // Include Pages
+        includeAll();
+
+        function changeContent(newPage) {
+            var contentBlock = document.getElementById("page-content");
+            include(newPage, contentBlock);
+            disableHeaders();
+            setActiveHeader(newPage);
+        }
+
+        function disableHeaders() {
+            var header = document.getElementById("header")
+            var navbar = document.getElementById("navbar");
+            var buttons = navbar.getElementsByTagName("button");
+            Array.from(buttons).forEach(button => {
+                button.classList.remove("current");
+            });
+        }
+
+        function setActiveHeader(page) {
+            var name = page.split('/').pop();
+            name = name.split('.').shift();
+            var id = name + '-btn';
+
+            document.getElementById(id).classList.add("current");
+        }
+
+        function include(page, div) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    if (this.status == 200) { div.innerHTML = this.responseText; }
+                    if (this.status == 404) { div.innerHTML = "Page Not Found."; }
+                }
+            }
+            xhttp.open("GET", page, true);
+            xhttp.send();
+        }
+
+        function includeAll() {
+            var i, divs;
+            divs = document.getElementsByTagName('*');
+            Array.from(divs).forEach(div => {
+                page = div.getAttribute("include");
+                if (page) {
+                    include(page, div);
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
