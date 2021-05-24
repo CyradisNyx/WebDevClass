@@ -56,6 +56,10 @@
         var currentPage = "home"
         includeAll();
 
+        $(window).resize(function () {
+            onResize();
+        });
+
         function include(page, div) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
