@@ -3,82 +3,135 @@
     <div id="header-extend" class="row d-none d-lg-flex"></div>
     <div id="header-extend" class="row d-flex d-lg-none"></div>
     <div class="row mx-3 justify-content-center">
-        <div id="map-wrap" class="col-12 col-lg-8 pb-3">
-            <img id="map-img" src="assets/island_map.jpg" alt="Sample Island Map"
+        <div id="map-wrap" class="col-12 col-lg-7 pb-3">
+            <img id="map-img" src="../assets/island_map.jpg" alt="Sample Island Map"
                 class="img-fluid rounded mx-auto d-block">
         </div>
-        <div class="col-12 col-xl-3 textbox">
-            <div class="container px-0">
-                <div class="row py-2 justify-content-center">
-                    <div class="text-center">
-                        <u>RESIDENT SERVICES</u>
+        <div class="col-12 col-xl-4 textbox">
+            <div class="container px-0" id="collapse-group">
+                <div class="row p-1 justify-content-center">
+                    <div data-toggle="collapse" data-target="#resident-services"
+                        class="textbox-transparent text-center d-none d-xl-block" type="button">
+                        <h4>RESIDENT SERVICES</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="row p-0 justify-content-center">
+                    <div id="resident-services" data-parent="#collapse-group"
+                        class="collapse row p-0 justify-content-center">
                         <div class="col-4">
-                            <img src="assets/town_hall.jpg" alt="Island Town Hall" class="img-fluid">
+                            <img src="../assets/town_hall.jpg" alt="Island Town Hall" class="img-fluid">
                         </div>
                         <div class="col-7 p-2 align-self-center">
+                            <u class="d-block d-xl-none">RESIDENT SERVICES</u>
                             <p class="mb-0">
                                 The main hub for island activities and development. Open 24/7, Isabelle and
                                 Tom Nook are here to help you at any time, with anything.
                             </p>
                         </div>
                     </div>
+                </div>
 
-                </div>
-                <div class="row py-2 justify-content-center">
-                    <div class="col-4">
-                        <img src="assets/nooks_cranny.png" alt="Nook's Cranny" class="img-fluid">
+                <div class="row p-1 justify-content-center">
+                    <div data-toggle="collapse" data-target="#nooks-cranny"
+                        class="textbox-transparent text-center d-none d-xl-block" type="button">
+                        <h4>NOOK'S CRANNY</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="col-7 p-2 align-self-center">
-                        <u>NOOK'S CRANNY</u>
-                        <p class="mb-0">The main hub for island activities and development. Open 24/7, Isabelle and
-                            Tom Nook are
-                            here to help you at any time, with anything.</p>
-                    </div>
-                </div>
-                <div class="row py-2 justify-content-center">
-                    <div class="col-4">
-                        <img src="assets/able_sisters.png" alt="Able Sisters" class="img-fluid">
-                    </div>
-                    <div class="col-7 p-2 align-self-center">
-                        <u>ABLE SISTERS</u>
-                        <p class="mb-0">The main hub for island activities and development. Open 24/7, Isabelle and
-                            Tom Nook are
-                            here to help you at any time, with anything.</p>
+                    <div id="nooks-cranny" data-parent="#collapse-group"
+                        class="collapse row p-0 justify-content-center">
+                        <div class="col-4">
+                            <img src="../assets/nooks_cranny.png" alt="Nook's Cranny" class="img-fluid">
+                        </div>
+                        <div class="col-7 p-2 align-self-center">
+                            <u class="d-block d-xl-none">NOOK'S CRANNY</u>
+                            <p class="mb-0">
+                                The main hub for island activities and development. Open 24/7, Isabelle and
+                                Tom Nook are here to help you at any time, with anything.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="row py-2 justify-content-center">
-                    <div class="col-4">
-                        <img src="assets/museum.png" alt="Museum" class="img-fluid">
+
+                <div class="row p-1 justify-content-center">
+                    <div data-toggle="collapse" data-target="#able-sisters"
+                        class="textbox-transparent text-center d-none d-xl-block" type="button">
+                        <h4>ABLE SISTERS</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="col-7 p-2 align-self-center">
-                        <u>BLATHER'S MUSEUM</u>
-                        <p class="mb-0">The main hub for island activities and development. Open 24/7, Isabelle and
-                            Tom Nook are
-                            here to help you at any time, with anything.</p>
+                    <div id="able-sisters" data-parent="#collapse-group"
+                        class="collapse row p-0 justify-content-center">
+                        <div class="col-4">
+                            <img src="../assets/able_sisters.png" alt="Able Sisters" class="img-fluid">
+                        </div>
+                        <div class="col-7 p-2 align-self-center">
+                            <u class="d-block d-xl-none">ABLE SISTERS</u>
+                            <p class="mb-0">
+                                The main hub for island activities and development. Open 24/7, Isabelle and
+                                Tom Nook are here to help you at any time, with anything.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="row py-2 justify-content-center">
-                    <div class="col-4">
-                        <img src="assets/campsite.png" alt="Visitor Campsite" class="img-fluid">
+
+                <div class="row p-1 justify-content-center">
+                    <div data-toggle="collapse" data-target="#blathers-museum"
+                        class="textbox-transparent text-center d-none d-xl-block" type="button">
+                        <h4>BLATHER'S MUSEUM</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="col-7 p-2 align-self-center">
-                        <u>VISITOR CAMPSITE</u>
-                        <p class="mb-0">The main hub for island activities and development. Open 24/7, Isabelle and
-                            Tom Nook are
-                            here to help you at any time, with anything.</p>
+                    <div id="blathers-museum" data-parent="#collapse-group"
+                        class="collapse row p-0 justify-content-center">
+                        <div class="col-4">
+                            <img src="../assets/museum.png" alt="Blather's Museum" class="img-fluid">
+                        </div>
+                        <div class="col-7 p-2 align-self-center">
+                            <u class="d-block d-xl-none">BLATHER"S MUSEUM</u>
+                            <p class="mb-0">
+                                The main hub for island activities and development. Open 24/7, Isabelle and
+                                Tom Nook are here to help you at any time, with anything.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="row py-2 justify-content-center">
-                    <div class="col-4">
-                        <img src="assets/dodoair.png" alt="DodoAir Terminal" class="img-fluid">
+
+                <div class="row p-1 justify-content-center">
+                    <div data-toggle="collapse" data-target="#visitor-campsite"
+                        class="textbox-transparent text-center d-none d-xl-block" type="button">
+                        <h4>VISITOR CAMPSITE</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="col-7 p-2 align-self-center">
-                        <u>DODOAIR TERMINAL</u>
-                        <p class="mb-0">The main hub for island activities and development. Open 24/7, Isabelle and
-                            Tom Nook are
-                            here to help you at any time, with anything.</p>
+                    <div id="visitor-campsite" data-parent="#collapse-group"
+                        class="collapse row p-0 justify-content-center">
+                        <div class="col-4">
+                            <img src="../assets/campsite.png" alt="Visitor Campsite" class="img-fluid">
+                        </div>
+                        <div class="col-7 p-2 align-self-center">
+                            <u class="d-block d-xl-none">VISITOR CAMPSITE</u>
+                            <p class="mb-0">
+                                The main hub for island activities and development. Open 24/7, Isabelle and
+                                Tom Nook are here to help you at any time, with anything.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-1 justify-content-center">
+                    <div data-toggle="collapse" data-target="#dodoair-terminal"
+                        class="textbox-transparent text-center d-none d-xl-block" type="button">
+                        <h4>DODOAIR TERMINAL</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div id="dodoair-terminal" data-parent="#collapse-group"
+                        class="collapse row p-0 justify-content-center">
+                        <div class="col-4">
+                            <img src="../assets/dodoair.png" alt="Dodoair Terminal" class="img-fluid">
+                        </div>
+                        <div class="col-7 p-2 align-self-center">
+                            <u class="d-block d-xl-none">DODOAIR TERMINAL</u>
+                            <p class="mb-0">
+                                The main hub for island activities and development. Open 24/7, Isabelle and
+                                Tom Nook are here to help you at any time, with anything.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
